@@ -1,0 +1,256 @@
+/* Reseteo básico general*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el body */
+body {
+    font-family: Limelight, Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f4f4f4;
+}
+
+/*MODIFICADORES DE TEXTO*/
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2d6e3e;
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+h2 {
+    font-size: 28px;
+    font-weight: normal;
+    color: #3d8b4f;
+    margin: 15px 0;
+}
+
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    color: #555555;
+    margin: 10px 0;
+}
+
+
+
+/* Estilo para todas las listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+/* Elementos de lista en navegación */
+nav ul li {
+    margin: 5px 0;
+}
+
+/* Enlaces de navegación */
+nav ul li a {
+    text-decoration: none;
+    color: #2d6e3e;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Efecto de poner la lista en linea */
+nav ul li {
+    display: inline-block;
+    padding: 10px;
+    /* Funciona en los 4 lados */
+    margin: 20px;
+
+
+}
+
+/* Hover en enlaces, efecto de cambio de color. */
+nav ul li a:hover {
+    color: #5cb85c;
+    text-decoration: underline;
+}
+
+/*CORRER MARGEN LISTA ORDENADA DE ALL PAGES*/
+ol {
+
+    margin-left: 40px;
+}
+
+/*SECCIONES Y CONTENEDORES*/
+
+/* Bloque o banda superior*/ /*FLEXBOX */
+header {
+    background-color: #e8f5e9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (win-width: 768px) {
+    header{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+}
+
+
+
+/*Bloque central*/
+main {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px;
+}
+
+/*Bloque o banda inferior*/
+footer {
+    background-color: #2d6e3e;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+}
+
+footer p {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/*IMÁGENES*/
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+#grama img,
+#imggeneral img {
+    max-width: 33%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+}
+
+
+
+/*SECCIONES*/
+
+section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 18px 0;
+    border-left: 4px solid #5cb85c;
+}
+
+
+
+/* Layout general de la sección de plantas */
+.section-biblioteca {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* En pantallas grandes, usar dos columnas */
+@media (min-width: 768px) {
+  .section-biblioteca {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Cada artículo */
+.section-biblioteca article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Imagen de cada planta */
+.section-biblioteca img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Títulos dentro de artículos */
+.section-biblioteca h3 {
+  margin-top: 0.5rem;
+  color: #2f7a3d;
+}
+
+/* Listas dentro de artículos */
+.section-biblioteca ol {
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+
+.section-articulos {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* separación entre artículos */
+    margin: 40px;
+}
+
+/* Cada artículo usa grid para dividir imagen/texto */
+.articulo {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* imagen y texto lado a lado */
+    align-items: center;
+    gap: 20px;
+    background-color: chartreuse;
+}
+
+/* Imagen a la izquierda, texto a la derecha */
+.articulo img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* En los artículos impares, invertimos el orden */
+.articulo.impar {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl; /* invierte visualmente el orden */
+}
+
+.articulo.impar div {
+    direction: ltr; /* para que el texto siga leyéndose normal */
+}
+
+.articulo img {
+    width: 100%;   /* o max-width: 300px; */
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
