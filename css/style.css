@@ -171,12 +171,6 @@ section {
   gap: 40px;
   margin: 40px;
 }
-@media (max-width: 767px) {
-  .section-articulos {
-    margin: 20px;
-    gap: 20px;
-  }
-}
 
 .articulo {
   display: grid;
@@ -187,12 +181,6 @@ section {
   padding: 20px;
   border-radius: 10px;
   transition: background-color 0.3s ease;
-}
-@media (max-width: 767px) {
-  .articulo {
-    gap: 15px;
-    padding: 15px;
-  }
 }
 @media (min-width: 768px) {
   .articulo {

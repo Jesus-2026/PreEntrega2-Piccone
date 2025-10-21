@@ -14,16 +14,10 @@ $fuente-principal: Limelight, Georgia, serif;
 $fuente-secundaria: Verdana, Geneva, Tahoma, sans-serif;
 
 
+//
+// MIXIN PARA RESPONSIVE
 // ========================================
-// MIXINS PARA RESPONSIVE
-// ========================================
-@mixin mobile {
-  @media (max-width: 767px) {
-    @content;
-  }
-}
-
-@mixin tablet {
+@mixin desktop {
   @media (min-width: 768px) {
     @content;
   }
@@ -138,7 +132,7 @@ header {
   flex-direction: column;
   align-items: center;
 
-  @include tablet {
+  @include desktop {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -216,7 +210,7 @@ section {
   gap: 2rem;
   padding: 1rem;
 
-  @include tablet {
+  @include desktop {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -262,11 +256,6 @@ section {
   flex-direction: column;
   gap: 40px;
   margin: 40px;
-
-  @include mobile {
-    margin: 20px;
-    gap: 20px;
-  }
 }
 
 .articulo {
@@ -279,12 +268,7 @@ section {
   border-radius: 10px;
   transition: background-color 0.3s ease;
 
-  @include mobile {
-    gap: 15px;
-    padding: 15px;
-  }
-
-  @include tablet {
+  @include desktop {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -298,7 +282,7 @@ section {
   }
 
   &.impar {
-    @include tablet {
+    @include desktop {
       direction: rtl;
     }
 
