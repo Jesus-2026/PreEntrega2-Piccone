@@ -1,0 +1,364 @@
+// ========================================
+// VARIABLES
+// ========================================
+$color-verde-oscuro: #2d6e3e;
+$color-verde-medio: #3d8b4f;
+$color-verde-claro: #5cb85c;
+$color-fondo-header: #e8f5e9;
+$color-texto: #333333;
+$color-texto-claro: #555555;
+$color-blanco: #ffffff;
+$color-gris-fondo: #f4f4f4;
+
+$fuente-principal: Limelight, Georgia, serif;
+$fuente-secundaria: Verdana, Geneva, Tahoma, sans-serif;
+
+
+// ========================================
+// MIXINS PARA RESPONSIVE
+// ========================================
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+
+// ========================================
+// RESETEO BÁSICO
+// ========================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+// ========================================
+// BODY
+// ========================================
+body {
+  font-family: $fuente-principal;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $color-texto;
+  background-color: $color-gris-fondo;
+}
+
+
+// ========================================
+// TÍTULOS
+// ========================================
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: $color-verde-oscuro;
+  text-align: center;
+  margin: 20px 0;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-verde-medio;
+  }
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: normal;
+  color: $color-verde-medio;
+  margin: 15px 0;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-verde-claro;
+  }
+}
+
+p {
+  font-family: $fuente-secundaria;
+  font-size: 18px;
+  color: $color-texto-claro;
+  margin: 10px 0;
+}
+
+
+// ========================================
+// LISTAS
+// ========================================
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ol {
+  margin-left: 40px;
+}
+
+
+// ========================================
+// NAVEGACIÓN - Usando nesting
+// ========================================
+nav {
+  ul {
+    li {
+      display: inline-block;
+      padding: 10px;
+      margin: 20px;
+
+      a {
+        text-decoration: none;
+        color: $color-verde-oscuro;
+        font-weight: bold;
+        font-size: 18px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: $color-verde-claro;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+
+// ========================================
+// HEADER - Flexbox
+// ========================================
+header {
+  background-color: $color-fondo-header;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+// ========================================
+// MAIN
+// ========================================
+main {
+  background-color: $color-blanco;
+  padding: 20px;
+  margin: 20px;
+}
+
+
+// ========================================
+// FOOTER
+// ========================================
+footer {
+  background-color: $color-verde-oscuro;
+  color: $color-blanco;
+  text-align: center;
+  padding: 15px;
+
+  p {
+    color: $color-blanco;
+    font-size: 14px;
+  }
+}
+
+
+// ========================================
+// IMÁGENES
+// ========================================
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+#grama img,
+#imggeneral img {
+  max-width: 33%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+}
+
+
+// ========================================
+// SECCIONES
+// ========================================
+section {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 18px 0;
+  border-left: 4px solid $color-verde-claro;
+}
+
+
+// ========================================
+// SECCIÓN BIBLIOTECA - Grid
+// ========================================
+.section-biblioteca {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 1rem;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      margin-top: 0.5rem;
+      color: #2f7a3d;
+    }
+
+    ol {
+      text-align: left;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+
+// ========================================
+// SECCIÓN ARTÍCULOS - Grid
+// ========================================
+.section-articulos {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 40px;
+
+  @include mobile {
+    margin: 20px;
+    gap: 20px;
+  }
+}
+
+.articulo {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 20px;
+  background-color: #f0f8f0;
+  padding: 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+
+  @include mobile {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &:hover {
+    background-color: #e0f0e0;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  &.impar {
+    @include tablet {
+      direction: rtl;
+    }
+
+    div {
+      direction: ltr;
+    }
+  }
+}
+
+
+// ========================================
+// FORMULARIO DE CONTACTO
+// ========================================
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+
+  label {
+    font-weight: bold;
+    color: $color-verde-oscuro;
+    margin-bottom: 5px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid $color-verde-claro;
+    border-radius: 5px;
+    font-family: $fuente-secundaria;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $color-verde-oscuro;
+    }
+  }
+
+  button {
+    background-color: $color-verde-oscuro;
+    color: $color-blanco;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: $color-verde-medio;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

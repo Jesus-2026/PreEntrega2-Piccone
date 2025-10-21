@@ -37,49 +37,33 @@
         <section>
             <h2>Datos de Contacto</h2>
             <p><strong>Mundo Planta</strong></p>
-            <p> Dirección: Av. Siempreverde 123, Ciudad</p>
-            <p> Teléfono: (011) 4567-8900</p>
-            <p> Email: info@mundoplanta.com</p>
-            <p> Horario: Lunes a Viernes 9:00 - 18:00</p>
+            <p>Dirección: Av. Siempreverde 123, Ciudad</p>
+            <p>Teléfono: (011) 4567-8900</p>
+            <p>Email: info@mundoplanta.com</p>
+            <p>Horario: Lunes a Viernes 9:00 - 18:00</p>
         </section>
 
+        <section>
+            <h2>Consultas sobre cualquier tema</h2>
+            <form>
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-    </main>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-    
-    <main>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono">
 
-    <section>
-        <h3>Consultas sobre cualquier tema</h3>
-        <!-- Aquí va 
-  todo el contenido 
-  del formulario -->
-        <form>
-            <label for="nombre">Nombre completo:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <br><br>
+                <label for="asunto">Asunto:</label>
+                <input type="text" name="asunto" id="asunto">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <br><br>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono">
-            <br><br>
-
-            <label for="asunto">Asunto:</label>
-            <input type="text" name="" id="asunto">
-            <br><br>
-
-
-            <label for="mensaje">Mensaje:</label>
-            <br>
-            <textarea id="mensaje" name="mensaje" rows="5" cols="40" required></textarea>
-            <br><br>
-
-            <button type="submit">Enviar mensaje</button>
-        </form>
-    </section>
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
 
     </main>
 
