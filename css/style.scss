@@ -1,49 +1,14 @@
-// ========================================
-// VARIABLES DE COLORES
-// ========================================
-$color-verde-oscuro: #2d6e3e;
-$color-verde-medio: #3d8b4f;
-$color-verde-claro: #5cb85c;
-$color-fondo-header: #e8f5e9;
-$color-fondo-claro: #f9f9f9;
-$color-fondo-articulo: #f0f8f0;
-$color-texto: #333333;
-$color-texto-claro: #555555;
-$color-blanco: #ffffff;
-$color-gris-fondo: #f4f4f4;
+// colores
+$verde-oscuro: #2d6e3e;
+$verde-medio: #3d8b4f;
+$verde-claro: #5cb85c;
+$fondo-header: #e8f5e9;
+$texto: #333333;
+$blanco: #ffffff;
 
-// ========================================
-// VARIABLES DE FUENTES
-// ========================================
-$fuente-principal: Limelight, Georgia, serif;
-$fuente-secundaria: Verdana, Geneva, Tahoma, sans-serif;
-
-// ========================================
-// VARIABLES DE ESPACIADO
-// ========================================
-$espaciado-chico: 10px;
-$espaciado-medio: 20px;
-$espaciado-grande: 40px;
-
-// ========================================
-// VARIABLES DE TRANSICIONES
-// ========================================
-$transicion-rapida: 0.2s ease;
-$transicion-normal: 0.3s ease;
-$transicion-lenta: 0.5s ease;
-
-
-// ========================================
-// MIXINS PARA RESPONSIVE
-// ========================================
+// mixins responsive
 @mixin mobile {
   @media (max-width: 767px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: 768px) and (max-width: 1023px) {
     @content;
   }
 }
@@ -54,110 +19,44 @@ $transicion-lenta: 0.5s ease;
   }
 }
 
-// ========================================
-// MIXIN PARA SOMBRAS
-// ========================================
-@mixin sombra-suave {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-@mixin sombra-media {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-@mixin sombra-fuerte {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-// ========================================
-// MIXIN PARA BOTONES
-// ========================================
-@mixin boton-base {
-  padding: 12px 30px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all $transicion-normal;
-  text-decoration: none;
-  display: inline-block;
-}
-
-
-// ========================================
-// RESETEO BÁSICO
-// ========================================
+// reset
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-// ========================================
-// BODY
-// ========================================
+// body
 body {
-  font-family: $fuente-principal;
+  font-family: Limelight, Georgia, serif;
   font-size: 16px;
   line-height: 1.6;
-  color: $color-texto;
-  background-color: $color-gris-fondo;
+  color: $texto;
+  background-color: #f4f4f4;
 }
 
-
-// ========================================
-// TÍTULOS
-// ========================================
+// titulos
 h1 {
   font-size: 36px;
-  font-weight: bold;
-  color: $color-verde-oscuro;
+  color: $verde-oscuro;
   text-align: center;
   margin: 20px 0;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: $color-verde-medio;
-  }
 }
 
 h2 {
   font-size: 28px;
-  font-weight: normal;
-  color: $color-verde-medio;
+  color: $verde-medio;
   margin: 15px 0;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: $color-verde-claro;
-  }
 }
 
 p {
-  font-family: $fuente-secundaria;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 18px;
-  color: $color-texto-claro;
+  color: #555555;
   margin: 10px 0;
 }
 
-
-// ========================================
-// LISTAS
-// ========================================
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-ol {
-  margin-left: 40px;
-}
-
-
-// ========================================
-// NAVEGACIÓN - Usando nesting
-// ========================================
+// navegacion
 nav {
   ul {
     li {
@@ -167,13 +66,12 @@ nav {
 
       a {
         text-decoration: none;
-        color: $color-verde-oscuro;
+        color: $verde-oscuro;
         font-weight: bold;
         font-size: 18px;
-        transition: all 0.3s ease;
 
         &:hover {
-          color: $color-verde-claro;
+          color: $verde-claro;
           text-decoration: underline;
         }
       }
@@ -181,12 +79,9 @@ nav {
   }
 }
 
-
-// ========================================
-// HEADER - Flexbox
-// ========================================
+// header
 header {
-  background-color: $color-fondo-header;
+  background-color: $fondo-header;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -195,40 +90,30 @@ header {
   @include desktop {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
 }
 
-
-// ========================================
-// MAIN
-// ========================================
+// main
 main {
-  background-color: $color-blanco;
+  background-color: $blanco;
   padding: 20px;
   margin: 20px;
 }
 
-
-// ========================================
-// FOOTER
-// ========================================
+// footer
 footer {
-  background-color: $color-verde-oscuro;
-  color: $color-blanco;
+  background-color: $verde-oscuro;
+  color: $blanco;
   text-align: center;
   padding: 15px;
 
   p {
-    color: $color-blanco;
+    color: $blanco;
     font-size: 14px;
   }
 }
 
-
-// ========================================
-// IMÁGENES
-// ========================================
+// imagenes
 img {
   max-width: 100%;
   height: auto;
@@ -249,69 +134,40 @@ img {
   margin: 15px auto;
 }
 
-
-// ========================================
-// SECCIONES
-// ========================================
+// secciones
 section {
-  background-color: $color-fondo-claro;
+  background-color: #f9f9f9;
   padding: 15px;
   margin: 18px 0;
-  border-left: 4px solid $color-verde-claro;
+  border-left: 4px solid $verde-claro;
 }
 
-// Hero (sección principal de inicio)
 .hero {
   text-align: center;
-  padding: $espaciado-grande $espaciado-medio;
-  background-color: $color-blanco;
+  padding: 40px 20px;
+  background-color: $blanco;
   border: none;
-
-  h2 {
-    margin-bottom: $espaciado-medio;
-  }
-
-  p {
-    font-size: 20px;
-    max-width: 800px;
-    margin: $espaciado-medio auto;
-  }
 
   img {
     max-width: 600px;
-    margin: $espaciado-grande auto;
+    margin: 40px auto;
     border-radius: 15px;
-    @include sombra-media;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 }
 
-// Sección de botones CTA
 .seccion-botones {
-  padding: $espaciado-grande $espaciado-medio;
-  background: linear-gradient(to bottom, $color-blanco, $color-fondo-claro);
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, $blanco, #f9f9f9);
   border: none;
 
   h3 {
-    color: $color-verde-medio;
-    margin-bottom: $espaciado-medio;
+    color: $verde-medio;
+    margin-bottom: 20px;
   }
 }
 
-.contenedor-botones {
-  a {
-    margin: $espaciado-chico;
-
-    &:hover {
-      transform: translateY(-3px);
-      @include sombra-media;
-    }
-  }
-}
-
-
-// ========================================
-// SECCIÓN BIBLIOTECA - Grid
-// ========================================
+// biblioteca
 .seccion-biblioteca {
   display: grid;
   grid-template-columns: 1fr;
@@ -323,76 +179,49 @@ section {
   }
 }
 
-// Tarjetas de plantas (Bootstrap Cards + estilos personalizados)
 .tarjeta-planta {
-  transition: transform $transicion-normal, box-shadow $transicion-normal;
+  transition: transform 0.3s ease;
 
   &:hover {
     transform: translateY(-10px);
-    @include sombra-fuerte;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   .card-title {
-    color: $color-verde-oscuro;
-  }
-
-  .list-group-item {
-    font-size: 14px;
-    padding: 8px 12px;
-
-    strong {
-      color: $color-verde-medio;
-    }
+    color: $verde-oscuro;
   }
 }
 
-
-// ========================================
-// SECCIÓN ARTÍCULOS - Grid
-// ========================================
+// articulos
 .seccion-articulos {
   display: flex;
   flex-direction: column;
-  gap: $espaciado-grande;
-  margin: $espaciado-grande;
+  gap: 40px;
+  margin: 40px;
 }
 
 .articulo {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
-  gap: $espaciado-medio;
-  background-color: $color-fondo-articulo;
-  padding: $espaciado-medio;
+  gap: 20px;
+  background-color: #f0f8f0;
+  padding: 20px;
   border-radius: 10px;
-  transition: all $transicion-normal;
-  @include sombra-suave;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   @include desktop {
     grid-template-columns: 1fr 1fr;
   }
 
-  &:hover {
-    background-color: #e0f0e0;
-    transform: scale(1.02);
-    @include sombra-media;
-  }
-
   img {
     width: 100%;
     border-radius: 10px;
-    transition: transform $transicion-normal;
-
-    &:hover {
-      transform: scale(1.05);
-    }
   }
 
   h2 {
-    color: $color-verde-oscuro;
+    color: $verde-oscuro;
   }
 
-  // Artículos impares (imagen a la derecha)
   &.impar {
     @include desktop {
       direction: rtl;
@@ -404,10 +233,7 @@ section {
   }
 }
 
-
-// ========================================
-// FORMULARIO DE CONTACTO
-// ========================================
+// formulario
 form {
   display: flex;
   flex-direction: column;
@@ -417,130 +243,85 @@ form {
 
   label {
     font-weight: bold;
-    color: $color-verde-oscuro;
-    margin-bottom: 5px;
+    color: $verde-oscuro;
   }
 
   input,
   textarea {
     width: 100%;
     padding: 10px;
-    border: 2px solid $color-verde-claro;
+    border: 2px solid $verde-claro;
     border-radius: 5px;
-    font-family: $fuente-secundaria;
     font-size: 16px;
-    transition: border-color 0.3s ease;
 
     &:focus {
       outline: none;
-      border-color: $color-verde-oscuro;
+      border-color: $verde-oscuro;
     }
   }
 
   button {
-    background-color: $color-verde-oscuro;
-    color: $color-blanco;
+    background-color: $verde-oscuro;
+    color: $blanco;
     padding: 12px 30px;
     border: none;
     border-radius: 5px;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 
     &:hover {
-      background-color: $color-verde-medio;
-      transform: translateY(-2px);
-    }
-
-    &:active {
-      transform: translateY(0);
+      background-color: $verde-medio;
     }
   }
 }
 
-
-// ========================================
-// ANIMACIONES
-// ========================================
-
-// Animación de entrada suave
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Aplicar animación a secciones
-section {
-  animation: aparecer 0.6s ease-out;
-}
-
-// Animación de pulso para botones importantes
-@keyframes pulso {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-// ========================================
-// ESTILOS PERSONALIZADOS PARA BOOTSTRAP
-// ========================================
-
-// Sobrescribir colores de botones Bootstrap
+// bootstrap
 .btn-success {
-  background-color: $color-verde-oscuro !important;
-  border-color: $color-verde-oscuro !important;
+  background-color: $verde-oscuro !important;
+  border-color: $verde-oscuro !important;
 
   &:hover {
-    background-color: $color-verde-medio !important;
-    border-color: $color-verde-medio !important;
+    background-color: $verde-medio !important;
   }
 }
 
-.btn-outline-success {
-  color: $color-verde-oscuro !important;
-  border-color: $color-verde-oscuro !important;
-
-  &:hover {
-    background-color: $color-verde-oscuro !important;
-    color: $color-blanco !important;
-  }
-}
-
-// Cards de Bootstrap
 .card {
   border: none;
-  @include sombra-suave;
-
-  &:hover {
-    @include sombra-fuerte;
-  }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+// carousel
+.carousel {
+  max-width: 100%;
+  margin: 0 auto;
 
-// ========================================
-// UTILIDADES RESPONSIVE
-// ========================================
+  .carousel-item {
+    img {
+      height: 500px;
+      object-fit: cover;
 
-// Ocultar en móvil
-.ocultar-mobile {
-  @include mobile {
-    display: none !important;
+      @include mobile {
+        height: 300px;
+      }
+    }
   }
-}
 
-// Ocultar en desktop
-.ocultar-desktop {
-  @include desktop {
-    display: none !important;
+  .carousel-caption {
+    background-color: rgba(45, 110, 62, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+
+    h5 {
+      color: $blanco;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    p {
+      color: $blanco;
+      font-size: 16px;
+      margin: 5px 0 0 0;
+    }
   }
 }

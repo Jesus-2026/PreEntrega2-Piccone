@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Cabeza, confirguracion de la pagina, metadatos, links, titulo de pestaña-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Basico -->
+
+    <meta name="description" content="Mundo Planta: Tu guia completa para el cuidado de las plantas. Consejos, artículos y biblioteca de especies.">
+    <meta name="keywords" content="plantas, cuidado de plantas, jardinería, plantas de interior, botánica">
+    <meta name="author" content="Jesus Maria Piccone">
+
+    <!-- Open Graph para redes sociales -->
+
+    <meta property="og:title" content="Mundo Planta - Conecta con la naturaleza">
+    <meta property="og:description" content="Descubrí consejos y guias para el cuidado de tus plantas">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./imagenes/imginicio.jpg">
+    
+    <title>Mundo Planta - Inicio | Cuidado de Plantas y Jardinería</title>
+
+    <!--Fuentes-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<!--CUERPO, TITULO DENTRO DE BANDA SUPERIOR MAS LINKS-->
+
+<body>
+
+    <header>
+
+ <nav class="navbar navbar-expand-lg" style="background-color: #e8f5e9;">
+        <div class="container-fluid">
+            <!-- Logo/Título -->
+            <a class="navbar-brand" href="index.html" style="color: #2d6e3e; font-size: 28px; font-weight: bold;">
+                🌱 Mundo Planta
+            </a>
+
+            <!-- Botón hamburguesa para móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" style="color: #2d6e3e; font-weight: bold;">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="biblioteca.html" style="color: #2d6e3e; font-weight: bold;">Biblioteca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="articulos.html" style="color: #2d6e3e; font-weight: bold;">Artículos Esenciales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quienessomos.html" style="color: #2d6e3e; font-weight: bold;">Quiénes Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html" style="color: #2d6e3e; font-weight: bold;">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    </header>
+
+    <!-- CAROUSEL DE PLANTAS -->
+    <div id="carouselPlantas" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselPlantas" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselPlantas" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselPlantas" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carouselPlantas" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#carouselPlantas" data-bs-slide-to="4"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="imagenes/romerocarr.jpg" class="d-block w-100" alt="Romero en jardín">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Romero</h5>
+                    <p>Aromática perfecta para cocinar y jardines</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="imagenes/curcumacarr.jpg" class="d-block w-100" alt="Cúrcuma en cultivo">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Cúrcuma</h5>
+                    <p>Exótica y con propiedades medicinales</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="imagenes/manzanillacarr.jpg" class="d-block w-100" alt="Manzanilla fresca">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Manzanilla</h5>
+                    <p>Calmante natural ideal para infusiones</p>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <img src="imagenes/mentacarr.jpg" class="d-block w-100" alt="Menta fresca">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Menta</h5>
+                    <p>Refrescante y fácil de cultivar</p>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+                <img src="imagenes/lavandacarr.jpg" class="d-block w-100" alt="Lavanda en campo">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Lavanda</h5>
+                    <p>Relajante y hermosa para cualquier espacio</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlantas" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPlantas" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL, SUB TITULOS, SECCIONES, PARRAFOS, IMAGENES.-->
+    <main>
+
+    <section class="hero">
+
+        <h2>Conocé e integrate</h2>
+
+            <p>🌱 “Las plantas nos conectan con la naturaleza,
+                purifican el aire y llenan de vida nuestros espacios. Cuidarlas es sencillo
+                y nos regalan bienestar cada día.”
+            </p>
+          
+        <img src="imagenes/imginicio.jpg" alt="Planta de interior con hojas verdes brillantes en maceta">
+
+    </section>
+
+     <!-- Sección de llamado a la acción -->
+
+    <section class="seccion-botones text-center py-5">
+        <h3 class="mb-4">Explorá nuestro contenido</h3>
+        <div class="contenedor-botones d-flex justify-content-center gap-3 flex-wrap">
+            <a href="biblioteca.html" class="btn btn-success btn-lg">
+                📚 Ver Biblioteca de Plantas
+            </a>
+            <a href="articulos.html" class="btn btn-outline-success btn-lg">
+                🛒 Ver Artículos Esenciales
+            </a>
+        </div>
+
+
+
+    </section>
+    </main>
+
+
+
+    <!--BANDA INFERIOR MAS PARRAFO-->
+    <footer>
+        <p>© 2025 Mundo Planta - Todos los derechos
+            reservados</p>
+        <p>Síguenos en redes sociales</p>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
