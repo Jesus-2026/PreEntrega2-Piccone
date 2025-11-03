@@ -1,26 +1,86 @@
 // ========================================
-// VARIABLES
+// VARIABLES DE COLORES
 // ========================================
 $color-verde-oscuro: #2d6e3e;
 $color-verde-medio: #3d8b4f;
 $color-verde-claro: #5cb85c;
 $color-fondo-header: #e8f5e9;
+$color-fondo-claro: #f9f9f9;
+$color-fondo-articulo: #f0f8f0;
 $color-texto: #333333;
 $color-texto-claro: #555555;
 $color-blanco: #ffffff;
 $color-gris-fondo: #f4f4f4;
 
+// ========================================
+// VARIABLES DE FUENTES
+// ========================================
 $fuente-principal: Limelight, Georgia, serif;
 $fuente-secundaria: Verdana, Geneva, Tahoma, sans-serif;
 
-
-//
-// MIXIN PARA RESPONSIVE
 // ========================================
+// VARIABLES DE ESPACIADO
+// ========================================
+$espaciado-chico: 10px;
+$espaciado-medio: 20px;
+$espaciado-grande: 40px;
+
+// ========================================
+// VARIABLES DE TRANSICIONES
+// ========================================
+$transicion-rapida: 0.2s ease;
+$transicion-normal: 0.3s ease;
+$transicion-lenta: 0.5s ease;
+
+
+// ========================================
+// MIXINS PARA RESPONSIVE
+// ========================================
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: 768px) {
     @content;
   }
+}
+
+// ========================================
+// MIXIN PARA SOMBRAS
+// ========================================
+@mixin sombra-suave {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@mixin sombra-media {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@mixin sombra-fuerte {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+// ========================================
+// MIXIN PARA BOTONES
+// ========================================
+@mixin boton-base {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all $transicion-normal;
+  text-decoration: none;
+  display: inline-block;
 }
 
 
@@ -194,17 +254,65 @@ img {
 // SECCIONES
 // ========================================
 section {
-  background-color: #f9f9f9;
+  background-color: $color-fondo-claro;
   padding: 15px;
   margin: 18px 0;
   border-left: 4px solid $color-verde-claro;
+}
+
+// Hero (sección principal de inicio)
+.hero {
+  text-align: center;
+  padding: $espaciado-grande $espaciado-medio;
+  background-color: $color-blanco;
+  border: none;
+
+  h2 {
+    margin-bottom: $espaciado-medio;
+  }
+
+  p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: $espaciado-medio auto;
+  }
+
+  img {
+    max-width: 600px;
+    margin: $espaciado-grande auto;
+    border-radius: 15px;
+    @include sombra-media;
+  }
+}
+
+// Sección de botones CTA
+.seccion-botones {
+  padding: $espaciado-grande $espaciado-medio;
+  background: linear-gradient(to bottom, $color-blanco, $color-fondo-claro);
+  border: none;
+
+  h3 {
+    color: $color-verde-medio;
+    margin-bottom: $espaciado-medio;
+  }
+}
+
+.contenedor-botones {
+  a {
+    margin: $espaciado-chico;
+
+    &:hover {
+      transform: translateY(-3px);
+      @include sombra-media;
+    }
+  }
 }
 
 
 // ========================================
 // SECCIÓN BIBLIOTECA - Grid
 // ========================================
-.section-biblioteca {
+.seccion-biblioteca {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -213,36 +321,27 @@ section {
   @include desktop {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+// Tarjetas de plantas (Bootstrap Cards + estilos personalizados)
+.tarjeta-planta {
+  transition: transform $transicion-normal, box-shadow $transicion-normal;
 
-    &:hover {
-      transform: translateY(-5px);
-    }
+  &:hover {
+    transform: translateY(-10px);
+    @include sombra-fuerte;
+  }
 
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
+  .card-title {
+    color: $color-verde-oscuro;
+  }
 
-    h3 {
-      margin-top: 0.5rem;
-      color: #2f7a3d;
-    }
+  .list-group-item {
+    font-size: 14px;
+    padding: 8px 12px;
 
-    ol {
-      text-align: left;
-      margin-top: 0.5rem;
+    strong {
+      color: $color-verde-medio;
     }
   }
 }
@@ -251,22 +350,23 @@ section {
 // ========================================
 // SECCIÓN ARTÍCULOS - Grid
 // ========================================
-.section-articulos {
+.seccion-articulos {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  margin: 40px;
+  gap: $espaciado-grande;
+  margin: $espaciado-grande;
 }
 
 .articulo {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  gap: 20px;
-  background-color: #f0f8f0;
-  padding: 20px;
+  gap: $espaciado-medio;
+  background-color: $color-fondo-articulo;
+  padding: $espaciado-medio;
   border-radius: 10px;
-  transition: background-color 0.3s ease;
+  transition: all $transicion-normal;
+  @include sombra-suave;
 
   @include desktop {
     grid-template-columns: 1fr 1fr;
@@ -274,13 +374,25 @@ section {
 
   &:hover {
     background-color: #e0f0e0;
+    transform: scale(1.02);
+    @include sombra-media;
   }
 
   img {
     width: 100%;
     border-radius: 10px;
+    transition: transform $transicion-normal;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
+  h2 {
+    color: $color-verde-oscuro;
+  }
+
+  // Artículos impares (imagen a la derecha)
   &.impar {
     @include desktop {
       direction: rtl;
@@ -344,5 +456,91 @@ form {
     &:active {
       transform: translateY(0);
     }
+  }
+}
+
+
+// ========================================
+// ANIMACIONES
+// ========================================
+
+// Animación de entrada suave
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Aplicar animación a secciones
+section {
+  animation: aparecer 0.6s ease-out;
+}
+
+// Animación de pulso para botones importantes
+@keyframes pulso {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+// ========================================
+// ESTILOS PERSONALIZADOS PARA BOOTSTRAP
+// ========================================
+
+// Sobrescribir colores de botones Bootstrap
+.btn-success {
+  background-color: $color-verde-oscuro !important;
+  border-color: $color-verde-oscuro !important;
+
+  &:hover {
+    background-color: $color-verde-medio !important;
+    border-color: $color-verde-medio !important;
+  }
+}
+
+.btn-outline-success {
+  color: $color-verde-oscuro !important;
+  border-color: $color-verde-oscuro !important;
+
+  &:hover {
+    background-color: $color-verde-oscuro !important;
+    color: $color-blanco !important;
+  }
+}
+
+// Cards de Bootstrap
+.card {
+  border: none;
+  @include sombra-suave;
+
+  &:hover {
+    @include sombra-fuerte;
+  }
+}
+
+
+// ========================================
+// UTILIDADES RESPONSIVE
+// ========================================
+
+// Ocultar en móvil
+.ocultar-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+// Ocultar en desktop
+.ocultar-desktop {
+  @include desktop {
+    display: none !important;
   }
 }
