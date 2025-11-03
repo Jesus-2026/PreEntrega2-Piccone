@@ -98,6 +98,11 @@ main {
   background-color: $blanco;
   padding: 20px;
   margin: 20px;
+
+  @include mobile {
+    padding: 10px;
+    margin: 10px;
+  }
 }
 
 // footer
@@ -140,6 +145,11 @@ section {
   padding: 15px;
   margin: 18px 0;
   border-left: 4px solid $verde-claro;
+
+  @include mobile {
+    padding: 10px;
+    margin: 10px 0;
+  }
 }
 
 .hero {
@@ -148,11 +158,32 @@ section {
   background-color: $blanco;
   border: none;
 
+  @include mobile {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
   img {
     max-width: 600px;
     margin: 40px auto;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+    @include mobile {
+      max-width: 100%;
+      margin: 20px auto;
+    }
   }
 }
 
@@ -161,9 +192,17 @@ section {
   background: linear-gradient(to bottom, $blanco, #f9f9f9);
   border: none;
 
+  @include mobile {
+    padding: 20px 10px;
+  }
+
   h3 {
     color: $verde-medio;
     margin-bottom: 20px;
+
+    @include mobile {
+      font-size: 20px;
+    }
   }
 }
 

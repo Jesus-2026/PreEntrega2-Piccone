@@ -67,6 +67,12 @@ main {
   padding: 20px;
   margin: 20px;
 }
+@media (max-width: 767px) {
+  main {
+    padding: 10px;
+    margin: 10px;
+  }
+}
 
 footer {
   background-color: #2d6e3e;
@@ -104,6 +110,12 @@ section {
   margin: 18px 0;
   border-left: 4px solid #5cb85c;
 }
+@media (max-width: 767px) {
+  section {
+    padding: 10px;
+    margin: 10px 0;
+  }
+}
 
 .hero {
   text-align: center;
@@ -111,11 +123,32 @@ section {
   background-color: #ffffff;
   border: none;
 }
+@media (max-width: 767px) {
+  .hero {
+    padding: 20px 10px;
+  }
+}
+@media (max-width: 767px) {
+  .hero h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .hero p {
+    font-size: 16px;
+  }
+}
 .hero img {
   max-width: 600px;
   margin: 40px auto;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 767px) {
+  .hero img {
+    max-width: 100%;
+    margin: 20px auto;
+  }
 }
 
 .seccion-botones {
@@ -123,9 +156,19 @@ section {
   background: linear-gradient(to bottom, #ffffff, #f9f9f9);
   border: none;
 }
+@media (max-width: 767px) {
+  .seccion-botones {
+    padding: 20px 10px;
+  }
+}
 .seccion-botones h3 {
   color: #3d8b4f;
   margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .seccion-botones h3 {
+    font-size: 20px;
+  }
 }
 
 .seccion-biblioteca {
